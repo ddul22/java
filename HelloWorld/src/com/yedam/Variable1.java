@@ -5,7 +5,7 @@ public class Variable1 {
 	public static void main(String[] args) {
 		// int(4byte)
 		int num1 = 1101111;
-		
+		//rrrr
 		byte num2 = 27; // byte(1byte)
 		short num3 = 128; // short(2byte)
 		long num4 = 9223372036854775807L;
