@@ -5,7 +5,7 @@ public class Variable1 {
 	public static void main(String[] args) {
 		// int(4byte)
 		int num1 = 1101111;
-		//rrrr
+		
 		byte num2 = 27; // byte(1byte)
 		short num3 = 128; // short(2byte)
 		long num4 = 9223372036854775807L;
@@ -32,7 +32,7 @@ public class Variable1 {
 		System.out.println(anotherAry);
 		
 		int sum = 0;
-		for(int i = 0; i < intAry.length; i++) {
+		for(int i = 0; i < intAry.length; i++) { // i=0인 이유는 인덱스 생각해서 첫번째 인덱스는 0번째이니까
 			sum += intAry[i];
 		}
 		System.out.println("길이"+intAry.length);
