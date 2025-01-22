@@ -6,31 +6,41 @@ import java.util.Scanner;
 public class Todo {
 
 	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in); //
+		Scanner scn = new Scanner(System.in); // 현재잔액 54000원 출금금액 마이너스 안되게 입금 10만원 안되게 
 		int balance = 0; // 예금액.
-		int out = 0; // 출금액.
-		int balance2 = 0; // 출금 후 잔액.  
-
-		System.out.println("1.입금 2.출금 3.잔액조회 4.종료"); //
-		System.out.print("메뉴를 선택하세요> ");
-		int num = Integer.parseInt(scn.nextLine()); // 어떤 값을 읽어들일때 scn.nextLine(), 문자타입으로 반환하겠습니다. 문자를 숫자타입으로
-													// 바꾸겠다(Integer.parseInt)
-
-		if (num == 1) { // 입금.
-			System.out.print("입금액을 입력> ");
-			balance = Integer.parseInt(scn.nextLine());
-			System.out.printf("현재 잔액은 %d원입니다. \n", balance);
+		
+		
+		while (true) {
+			System.out.println("1.입금 2.출금 3.잔액조회 4.종료"); //
+			System.out.print("메뉴를 선택하세요> ");
+			int num = Integer.parseInt(scn.nextLine()); // 어떤 값을 읽어들일때 scn.nextLine(), 문자타입으로 반환하겠습니다. 문자를 숫자타입으로
+			// 바꾸겠다(Integer.parseInt)
 			
-		} else if (num == 2) { // 출금.
-			System.out.print("출금액을 입력> ");
-			out = Integer.parseInt(scn.nextLine());
-			balance2 = -1 * (balance - out); // 음수를 양수로 바꾸려고 -1을 곱함????? 
-			System.out.printf("현재 잔액은 %d원입니다.\n", balance2);
-			
-		} else if (num == 3) { // 잔액조회.
-			System.out.printf("현재 잔액은 %d원입니다.\n", balance);
-
-		} else if (num == 4) { // 종료.
+			if (num == 1) { // 입금.
+				System.out.print("입금액을 입력> ");
+				int in =Integer.parseInt(scn.nextLine());
+				if (balance+in > 100000) {
+					System.out.println("예금액을 100000원을 넘길 수 없습니다");
+				}else {
+				balance += in;
+				System.out.printf("현재 입금액 %d원입니다. \n", in);
+				}
+				
+			} else if (num == 2) { // 출금.
+				System.out.print("출금액을 입력> ");
+				int out = Integer.parseInt(scn.nextLine());
+				if (balance-out < 0) {
+					System.out.println("출금액이 현재 가지고 있는 잔액보다 많습니다");
+				} else {
+					balance -= out;
+					System.out.printf("현재 출금액은 %d원입니다.\n", out);
+				}
+				
+			} else if (num == 3) { // 잔액조회.
+				System.out.printf("현재 잔액은 %d원입니다.\n", balance);
+			} else if (num == 4) { // 종료.
+				break;
+			}
 			
 		}
 		System.out.printf("end of prog\n"); //
