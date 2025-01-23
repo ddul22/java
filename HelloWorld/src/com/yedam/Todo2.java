@@ -14,6 +14,7 @@ public class Todo2 {
 		boolean run = true;
 		Scanner scn = new Scanner(System.in);
 		String[] friendAry = new String[100];
+		
 
 		while (run) {
 			System.out.println("1.목록(이름,연락처,성별) 2.등록 3.조회(성별) 4.삭제(이름) 5.수정(이름)연락처를 수정 9.종료");
@@ -34,16 +35,14 @@ public class Todo2 {
 				break;
 			case 2:
 				for (int i = 0; i < friendAry.length; i++) {
-					System.out.print("이름,연락처,성별을 입력하세요");
-					String add = scn.nextLine();
-					if (add.equals("stop")) {
-						break;
+					if(friendAry[i] == null) {
+					   friendAry[i] = scn.nextLine();  //입력.
+					   System.out.println("등록완료.");
+					   break;
 					}
-					friendAry[i] = add;
 
 				}
-				System.out.println("등록완료!");
-				break;
+				
 
 			case 3:
 				System.out.print("조회할 성별을 입력하세요");
@@ -67,17 +66,22 @@ public class Todo2 {
 					if(friendAry[i] != null) {
 						String removename = friendAry[i].split(",")[0];
 						if(rmname .equals(removename)) {
-						  
+						
 						}
 					}
 					
 				}
 				break;
 			case 5:
-				
+				System.out.print("수정할 이름과 연락처를 입력하세요");
+				String renew = scn.nextLine();
+				for(int i = 0; i < friendAry.length; i++) {
+					
+				}
+				break;
 			case 9:
 			}
-
-		}
-	}
-}
+		} // end of while.
+		System.out.println("end of prog.");
+	} // end of main.
+} // end of class.

@@ -15,7 +15,6 @@ public class Forloop1 {
 		
 		while(run) { // 반복문 실행??
 			System.out.println("학생점수 입력 2.최고점수 3.평균 4.합계점수 5.종료" );
-			System.out print;
 		}
 	}
 }

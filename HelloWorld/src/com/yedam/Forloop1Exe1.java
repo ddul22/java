@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 학생점수 입력 받아서 배열저장.
  * 최고점수, 평균, 합계점수 출력.
  */
-public class Forloop1 {
+public class Forloop1Exe1 {
 	public static void main(String[] args) {
 		boolean run = true;
 		Scanner scn = new Scanner(System.in);
