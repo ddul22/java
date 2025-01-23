@@ -30,9 +30,9 @@ public class BookExe {
 			case 2: // 도서등록
 				for(int i = 0; i < bookRepository.length; i++) {
 					if(bookRepository[i] == null) {
-						System.out.println("등록할 도서를 입력해주세요");
-						bookRepository[i].bookName = scn.nextLine();
 						
+						System.out.println("책제목,작가,출판사를 입력하세요 >");
+					
 					}
 				}
 				break;
