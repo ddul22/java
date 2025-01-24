@@ -66,7 +66,8 @@ public class Todo2 {
 					if(friendAry[i] != null) {
 						String removename = friendAry[i].split(",")[0];
 						if(rmname .equals(removename)) {
-						String 
+							// null 에 넣고 나가라 반환하기 만들기
+							friendAry[i] = null;
 						}
 					}
 					
