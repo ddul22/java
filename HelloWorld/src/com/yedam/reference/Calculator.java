@@ -12,6 +12,10 @@ public class Calculator {
 	}
 	// 1월달 출력.
 	public void showcalendar() {
+		
+		int spaces = 6;
+		int lastDate = 31;
+
 		String[] days = {"Sun", "Mon", "Tue", "Thr", "Sat"};
 		for(String day : days) {
 			System.out.printf("%4s", day);
@@ -22,7 +26,7 @@ public class Calculator {
 		
 		
 	}
-	
+
 	public Book getBookInfo(String btitle, Book[] bookAry) {
 		Book[] bookRepo = {new Book("이것이 자바다", "신용권", "한빛미디어", 10000),
 				          new Book("자바스크립트기초", "김자바", "자바출판사", 15000),

@@ -12,6 +12,7 @@ public class CalculatorExe {
 		        
 		
 		Calculator cal = new Calculator();
+		cal.showcalendar();
 		
 		Book author = cal.getBookInfo("혼자공부CSS", bookStore);
 		if(author != null) {
