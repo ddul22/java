@@ -96,6 +96,7 @@ public class BoardExe {
 		String title = scn.nextLine();
 		if(title.length() < 5 || title.length() > 15 ) {
 			System.out.println("등록불가합니다");
+			//
 			
 		}
 		
