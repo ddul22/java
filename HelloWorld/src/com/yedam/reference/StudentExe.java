@@ -1,7 +1,9 @@
 package com.yedam.reference;
 
 import java.util.Scanner;
-
+/*
+ * 
+ */
 public class StudentExe {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
@@ -11,17 +13,20 @@ public class StudentExe {
 		std1.studentName = "홍길동";
 		std1.engScore = 80;
 		std1.mathScore = 85;
+		std1.gender = Gender.MEN;
 
 		Student std2 = new Student();
 		std2.studentName = "김민수";
 		std2.engScore = 88;
 		std2.mathScore = 80;
-
+		std2.gender = Gender.MEN;
+		
 		// 홍정학, 75, 90
 		Student std3 = new Student();
 		std3.studentName = "홍정학";
 		std3.engScore = 75;
 		std3.mathScore = 90;
+		std3.gender = Gender.WOMEN;
 
 		students[0] = std1;
 		students[1] = std2;
