@@ -7,5 +7,5 @@ public class Dog extends Animal {
 		// TODO Auto-generated method stub
 		System.out.println("멍멍멍...");
 	}
-
+//
 }

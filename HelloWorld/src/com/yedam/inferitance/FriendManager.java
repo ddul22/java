@@ -4,7 +4,7 @@ public class FriendManager {
 	public static void main(String[] args) {
 		FriendExe app = FriendExe.getInstance();
 		app.run();
-		
+		//
 		// 홍길동, 010-1111-2222
 		// 김민수, 010-2222-3333, 예담, 역사학과
 		// 박민규, 010-2222-4444, 구글, 개발팀

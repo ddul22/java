@@ -1,7 +1,7 @@
 package com.yedam.inferitance;
 
 /*
- * 학교정보.
+ * 학교정보.//
  */
 public class UnivFriend extends Friend {
 	// 필드.

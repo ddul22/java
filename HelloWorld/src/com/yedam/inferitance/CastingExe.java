@@ -11,7 +11,7 @@ public class CastingExe {
 		Friend f1 = new ComFriend("","","",""); // promotion.
 //		ComFriend f2 = (ComFriend) new Friend("", ""); // casting.
 		f1 = new Friend("","");
-		if(f1 instanceof ComFriend) {
+		if(f1 instanceof ComFriend) {//
 			ComFriend f2 = (ComFriend) f1;
 			System.out.println(f2.showInfo());
 		} else {

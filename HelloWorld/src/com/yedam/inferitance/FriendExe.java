@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 친구목록, 등록, 수정, 삭제
  * 수정: 이름, 연락처 입력.
  */
-public class FriendExe {
+public class FriendExe {//
 	// 싱글톤.
 	// 1.필드선언.
 	private static FriendExe instance = new FriendExe();

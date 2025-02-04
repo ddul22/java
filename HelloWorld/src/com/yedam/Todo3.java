@@ -70,7 +70,7 @@ public class Todo3 {
 							String removename = friendAry[i][0];
 							if(rmname .equals(removename)) {
 								 
-							}
+							}//
 					}
 
 				}

@@ -6,7 +6,7 @@ package com.yedam.inferitance;
  */
 public class Friend extends Object{
 	// 필드.
-	private String friendName;
+	private String friendName;//
 	private String phoneNumber;
 	private BloodType btype;
 	

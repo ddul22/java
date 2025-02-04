@@ -68,7 +68,7 @@ public class Todo2 {
 						if(rmname .equals(removename)) {
 							// null 에 넣고 나가라 반환하기 만들기
 							friendAry[i] = null;
-						}
+						}//
 					}
 					
 				}

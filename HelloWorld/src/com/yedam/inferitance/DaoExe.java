@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 실행클래스(main)
  * mysql
  * oracle
- */
+ *///
 public class DaoExe {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
