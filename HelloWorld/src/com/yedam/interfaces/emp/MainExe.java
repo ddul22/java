@@ -18,7 +18,7 @@ public class MainExe {
 		boolean run = true;
 
 		// 배열, 컬렉션.
-		EmpDAO dao = new EmpListExe();
+		EmpDAO dao = new EmpAryExe();
 
 		while (run) {
 			System.out.println("1.추가 2.수정 3.삭제 4.조회 9.종료");
