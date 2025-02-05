@@ -16,7 +16,7 @@ public class Student {
 		this.engScore = engScore;
 	}
 
-	Student(String studentName, int engScore, int mathScore) { //매개값이 있는 생성자
+	public Student(String studentName, int engScore, int mathScore) { //매개값이 있는 생성자
 		this.studentName = studentName; // this가 인스턴스 자기자신이 가지고 있는 필드(studentName)
 		this.mathScore = mathScore;
 		this.engScore = engScore;
