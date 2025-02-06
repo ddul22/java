@@ -53,7 +53,7 @@ public class EmpListExe implements EmpDAO {
 			}
 		}
 		return false; // 수정을 못함.
-	}
+	} // end of modifyEmp.
 
 	@Override
 	public boolean removeEmp(int empNo) {

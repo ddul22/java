@@ -13,5 +13,4 @@ public interface EmpDAO {
 	public boolean removeEmp(int empNo);
 	// 조회.
 	public Employee[] search(Employee emp);
-	
 }
