@@ -16,11 +16,11 @@ public class FileExe {
 		// ListExe.java 읽기.
 		char txt;
 		try {
-			Reader reader = new FileReader("c:/temp/ListExe.java");
+			Reader reader = new FileReader("c:/temp/ListExe.java"); 
 			while(true) {
-				int chr = reader.read(); // char(2byte)
-				System.out.print((char) chr); // 65 -> A
-				if(chr == -1) {
+				int chr = reader.read(); // char(2byte) 
+				System.out.print((char) chr); // 65 -> A  
+				if(chr == -1) { 
 					break;
 				}
 			}
