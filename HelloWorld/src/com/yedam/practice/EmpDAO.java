@@ -8,17 +8,18 @@ import java.util.List;
  */
 public class EmpDAO {
 
-	List<Employee> empList = new ArrayList<>();
+	List<Employee> empList = new ArrayList<>(); //1.?왜 비어있어??
 	
 	public boolean registerEmp(Employee emp) {
 		empList.add(emp);
-		return true;
+		return true; // 3.?어떨땐 true?? 
 	}
 	
 	public boolean modifyEmp(String emp) {
 		String empNo = emp.split(" ")[0];
 		int salary = Integer.parseInt(emp.split(" ")[1]);
-		return false;
+		return false; // 4.?어떨땐 false??
+		
 	}
 	
 	public boolean removeEmp(int empNo) {

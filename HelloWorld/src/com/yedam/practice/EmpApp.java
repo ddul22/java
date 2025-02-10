@@ -48,7 +48,7 @@ public class EmpApp {
 			case 2: // 목록
 				List<Employee> result = dao.search();
 				System.out.println("사번   이름   전화번호");
-				for(Employee results:result) {
+				for(Employee results:result) { //3.?results:result 뭘까? 
 					System.out.println(results.getEmpNo() + " " + results.getEmpName() + " " + results.getTelNo());
 				}
 				break;

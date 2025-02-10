@@ -10,7 +10,7 @@ import java.util.Date;
  * 입사일자(2023-10-01)
  * 급여(300)
  */
-public class Employee {
+public class Employee { //2.?왜 클래스를 사용?
 	private String empNo;
 	private String empName;
 	private String telNo;
