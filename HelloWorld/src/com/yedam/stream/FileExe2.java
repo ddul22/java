@@ -10,7 +10,7 @@ public class FileExe2 {
 		// 보조스트림(입출력스트림)
 		try {
 			Reader reader = new FileReader("c:/temp/students.txt");
-			BufferedReader br = new BufferedReader(reader);
+			BufferedReader br = new BufferedReader(reader);	
 			
 			while(true) {				
 				String str = br.readLine(); // 한라인씩 읽어오기.

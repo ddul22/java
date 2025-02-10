@@ -22,7 +22,7 @@ public class StudentApp {
 	List<Student> Students = new ArrayList<>();
 
 	public StudentApp() {
-		init(); // 초기갑.
+		init(); // 초기값.
 	}
 	public void start() {
 		while (run) {
