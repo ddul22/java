@@ -18,11 +18,23 @@ public class EmpDAO {
 	public boolean modifyEmp(String emp) {
 		String empNo = emp.split(" ")[0];
 		int salary = Integer.parseInt(emp.split(" ")[1]);
+		for(int i = 0; i < empList.size(); i++) {
+			if(empList.get(i).getEmpNo().equals(empNo)) {
+				empList.get(i).setSalary(salary);
+			return true;
+			}
+		}
 		return false; // 4.?어떨땐 false??
 		
 	}
 	
-	public boolean removeEmp(int empNo) {
+	public boolean removeEmp(String empNo) {
+		for(int i = 0; i < empList.size(); i++) {
+			if(empList.get(i).getEmpNo().equals(empNo)) {
+				empList.remove(i);
+				return true;
+			}
+		}
 		return false;
 	}
 	

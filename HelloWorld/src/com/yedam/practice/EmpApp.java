@@ -53,14 +53,29 @@ public class EmpApp {
 				}
 				break;
 			case 3: // 수정
-				System.out.printf("사번 급여>>");
+				System.out.printf("사번 급여>> ");
 				String param = scn.nextLine();
-				dao.modifyEmp(param);
+				if(dao.modifyEmp(param)) {
+					System.out.println("수정완료");
+				}else{
+					System.out.println("수정실패");
+				};
 				break;
-			case 4: 
+			case 4: // 삭제
+				System.out.print("사번>> ");
+				String remove = scn.nextLine();
+				if(dao.removeEmp(remove)) {
+					System.out.println("삭제완료");
+				}else {
+					System.out.println("삭제실패");
+				}
 				break;
 			case 5: // 조회
+				System.out.print("입사일자>> ");
+				String hiredate = scn.nextLine();
+			
 				
+				}
 				break;
 
 			}
@@ -68,4 +83,4 @@ public class EmpApp {
 		}
 	}
 
-}
+
