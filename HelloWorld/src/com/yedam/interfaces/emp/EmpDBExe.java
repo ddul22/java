@@ -55,9 +55,13 @@ public class EmpDBExe implements EmpDAO {
 	@Override
 	public List<Employee> search(Employee emp) {
 		List<Employee> empList = new ArrayList<>();
+		String qry = "select *  "+ 
+					  "from tbl_employees " + 
+					  "where emp_name = nvl('" +emp.getEmpName() + "', emp_name) " +
+					 " order by emp_no";
 		try {
 			Statement stmt = getConnect().createStatement();
-			ResultSet rs = stmt.executeQuery("select * from tbl_employees");
+			ResultSet rs = stmt.executeQuery(qry);
 			// 조회결과.
 			while(rs.next()) {
 				Employee emp1 = new Employee();
