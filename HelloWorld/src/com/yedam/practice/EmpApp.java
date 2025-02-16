@@ -60,7 +60,7 @@ public class EmpApp {
 				}else{
 					System.out.println("수정실패");
 				};
-				break;
+				break;//
 			case 4: // 삭제
 				System.out.print("사번>> ");
 				String remove = scn.nextLine();
