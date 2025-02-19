@@ -33,13 +33,7 @@ public class BookListExe implements BookDAO {
 			if (bookList.get(i).getBookNo() == book.getBookNo()) {
 				if ((book.getBookNo() != 0)) {
 					bookList.get(i).setBookNo(book.getBookNo());
-					;
 				}
-			}
-			try {
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
 			
 			if(book.getPrice() != 0) {
@@ -64,8 +58,6 @@ public class BookListExe implements BookDAO {
 	@Override // 조회
 	public List<Book> search(Book book) {
 		List<Book> result = new ArrayList<Book>();
-		int idx = 0;
-		int price = book.getPrice();
 		for(int i = 0; i < bookList.size(); i++) {
 			System.out.println(bookList.get(i).getBookName().indexOf(book.getBookName()));
 			if(bookList.get(i).getBookName().indexOf(book.getBookName())!=-1) {

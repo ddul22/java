@@ -22,7 +22,7 @@ public class EmpDAO {
 			if(empList.get(i).getEmpNo().equals(empNo)) {
 				empList.get(i).setSalary(salary);
 			return true;
-			}//
+			}
 		}
 		return false; // 4.?어떨땐 false??
 		
