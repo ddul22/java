@@ -10,14 +10,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.yedam.PageVO;
 import com.yedam.dao.BoardDAO;
 import com.yedam.vo.BoardVO;
+import com.yedam.vo.SearchVO;
 
 public class BoardListControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// boardList.do?page=1
+		// boardList.do?searchCondition=T&keyword=123
 		String page = req.getParameter("page");
 		page = page == null ? "1" : page;
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
+		sc = sc == null ? "" : sc; // null값처리.
+		kw = kw == null ? "" : kw; // null값처리. 공백을 넣어 에러 안나게 함.
+		
+		// SearchVO : 파라미터.
+		SearchVO search = new SearchVO(Integer.parseInt(page), sc, kw);
 		
 		String name = "홍길동";
 		System.out.println(name);
@@ -26,13 +34,16 @@ public class BoardListControl implements Control {
 		req.setAttribute("msg", name);
 
 		BoardDAO edao = new BoardDAO();
-		List<BoardVO> list = edao.selectBoard(Integer.parseInt(page));
+		List<BoardVO> list = edao.selectBoard(search);
 		req.setAttribute("list", list);
 		
 		// 페이징.
-		int totalCnt = edao.getTotalCount(); // 실제건수.
+		int totalCnt = edao.getTotalCount(search); // 실제건수.
 		PageVO paging = new PageVO(Integer.parseInt(page), totalCnt);
 		req.setAttribute("paging", paging);
+		// searchCondition, keyword 전달.
+		req.setAttribute("searchCondition", sc);
+		req.setAttribute("keyword", kw);
 		
 		// 요청재지정(url:boardList.do (boardList.jsp)) 할 때
 		req.getRequestDispatcher("/WEB-INF/views/boardList.jsp").forward(req, resp); // req에 정보를 담아서 연결하고 싶은 페이지

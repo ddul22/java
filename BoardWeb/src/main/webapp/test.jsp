@@ -25,5 +25,10 @@
 	    <p>당신은 미성년자입니다</p>
 	  </c:otherwise>
 	</c:choose>
+	
+	<c:forEach var="i" begin="1" end="10" step="2">
+	  <p>i의 값은 ${i % 2 }</p>
+	</c:forEach>
+	
 </body>
 </html>
