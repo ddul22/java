@@ -14,7 +14,7 @@ public class AddBoardControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 3개 파라미터 활용 db 저장. 목록으로 이동.
+		// 3개 파라미터 활용 db 저장. 목록으로 이동.er
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
 		String writer = req.getParameter("writer");
