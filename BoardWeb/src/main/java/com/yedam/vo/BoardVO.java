@@ -18,5 +18,8 @@ public class BoardVO { // tbl_board
 	private Date writeDate;
 	private int viewCnt;
 	private String img;
+	public void setTitle(String title2) {
+		
+	}
 
 }
