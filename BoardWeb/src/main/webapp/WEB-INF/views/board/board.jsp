@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:include page="includes/header.jsp"></jsp:include>
 
 <h3>상세화면(board.jsp)</h3>
 
@@ -27,9 +26,7 @@
 			<td><c:out value="${board.writer }"></c:out></td>
 			<th>작성일시</th>
 			<td><c:out value="${board.writeDate }"></c:out></td>
-		</tr>
-		<tr><th>이미지<td colspan="1"></td></th></tr>
-		<tr>
+		<tr><th>이미지 <c:out value=${board.img }></c:out></th></tr>
 			<td colspan="4" align="center">
 				<button class="btn btn-warning" type="submit">수정</button>
 				<button class="btn btn-danger" type="button">삭제</button>
@@ -53,4 +50,3 @@
 					alert("권한을 확인하세요.");
 			});
 </script>
-<jsp:include page="includes/footer.jsp"></jsp:include>>

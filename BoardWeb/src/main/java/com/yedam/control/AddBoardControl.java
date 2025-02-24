@@ -37,7 +37,7 @@ public class AddBoardControl implements Control {
 //		// 매개값으로 활용.
 		BoardVO bvo = new BoardVO();
 		bvo.setTitle(title);
-		bvo.setcontent(content);
+		bvo.setContent(content);
 		bvo.setWriter(writer);
 		bvo.setImg(img); // 추가한 img컬럼.
 
