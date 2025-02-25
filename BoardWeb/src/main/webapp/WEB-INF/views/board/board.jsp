@@ -26,7 +26,7 @@
 			<td><c:out value="${board.writer }"></c:out></td>
 			<th>작성일시</th>
 			<td><c:out value="${board.writeDate }"></c:out></td>
-		<tr><th>이미지 <c:out value=${board.img }></c:out></th></tr>
+		<tr><th>이미지 <c:out value="${board.img }"></c:out></th></tr>
 			<td colspan="4" align="center">
 				<button class="btn btn-warning" type="submit">수정</button>
 				<button class="btn btn-danger" type="button">삭제</button>
@@ -37,8 +37,40 @@
 		</c:if>
 	</table>
 </form>
+
+<style>
+  .reply .content ul{
+    list-style-type: none;
+  }
+  .reply .content span {
+  display: inline-block;
+  }
+</style>
+
+<!-- 댓글관련. -->
+<div class="container reply">
+  <!-- 댓글등록 -->
+<div class="header">
+</div>
+	<input type="text" id="reply" class="col-sm-9">
+	<button id="addReply">댓글등록</button>
+<!-- 댓글목록 -->
+<div class="content">
+<ul>
+   <li>
+  <span class="col-sm-2">글번호</span>
+  <span class="col-sm-5">글내용</span>
+  <span class="col-sm-2">작성자</span>
+  <span class="col-sm-2">삭제</span>
+  </li>
+</ul>
+</div>
+
+</div>
 <script>
 	let logid = "${loginId}"; // 자바의 변수값을 script 사용.
+	const bno = "${board.boardNo }";
+	console.log(bno);
 	// 삭제버튼에 클릭이벤트 등록.
 	document.querySelector('button.btn-danger').addEventListener('click',
 			function(e) {
@@ -50,3 +82,6 @@
 					alert("권한을 확인하세요.");
 			});
 </script>
+
+<script src="js/replyService.js"></script>
+<script src="js/reply.js"></script>

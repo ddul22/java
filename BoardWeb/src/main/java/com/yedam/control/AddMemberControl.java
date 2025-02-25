@@ -8,18 +8,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.dao.MemberDAO;
 
-public class RemoveMemberControl implements Control {
+public class AddMemberControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// param(아이디, 비밀번호, 이름)
 		String id = req.getParameter("mid");
+		String pw = req.getParameter("mpw");
+		String name = req.getParameter("mname");
 		
-		// 숙제 MemberDAO에 삭제. boolean타입. 메소드 만들기 메소드이름은 deletMember(String id);
-		MemberDAO mdao = new MemberDAO();
-		// 정상삭제: true, 처리예외: false;
-		boolean isOk = mdao.deleteMember(id);
-		
+		MemberDAO mdao = new MemberDAO(); // 추가메소드(boolean insertMember(MemberVO member))
+	    boolean isOk = mdao.addMember(id, pw, name);
+	    
+	    // 처리결과 반환.
 		if(isOk) {
 			// {"retCode": "OK"}
 			resp.getWriter().print("{\"retCode\": \"OK\"}");
