@@ -73,7 +73,8 @@ public class BoardDAO extends DAO {
 				+ "         ,content" //
 				+ "         ,writer" //
 				+ "         ,write_date" //
-				+ "         ,view_cnt" //
+				+ "         ,view_cnt "
+				+ "          ,img" //
 				+ "   from tbl_board" //
 				+ "   where board_no = ?";
 
@@ -90,6 +91,7 @@ public class BoardDAO extends DAO {
 				board.setWriter(rs.getString("writer"));
 				board.setWriteDate(rs.getDate("write_date"));
 				board.setViewCnt(rs.getInt("view_cnt"));
+				board.setImg(rs.getString("img"));
 				// 결과반환.
 				return board;
 			}

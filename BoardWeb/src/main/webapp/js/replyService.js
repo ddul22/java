@@ -7,8 +7,8 @@ const svc = {
 		return this.name;
 	},
 	// 목록메소드.
-	replyList: function(bno, successCallback, errorCallback) {
-		fetch('replyList.do?bno=' + bno)
+	replyList: function(param={ bno, page }, successCallback, errorCallback) {
+		fetch('replyList.do?bno=' + param.bno + '&page=' +param.page)
 		.then(result => result.json()) // 화살표 함수.
 		.then(successCallback) // 정상처리시 실행함수.
 		.catch(errorCallback) // 에러시 실행할 함수.
@@ -22,9 +22,16 @@ const svc = {
 	},
 	// 삭제메소드.
 	removeReply(rno = 1, successCallback, errorCallback) {
-		fetch('removeReply.do?rno='+rno)
-				.then(result => result.json()) // 화살표 함수.
-				.then(successCallback) // 정상처리시 실행함수.
-				.catch(errorCallback) // 에러시 실행할 함수.
+		fetch('removeReply.do?rno=' + rno)
+			.then(result => result.json()) // 화살표 함수.
+			.then(successCallback) // 정상처리시 실행함수.
+			.catch(errorCallback) // 에러시 실행할 함수.
+	},
+	// 페이징 계산.
+	makePaging(bno = 1, successCallback, errorCallback) {
+		fetch('getReplyCnt.do?bno=' + bno)
+			.then(result => result.json()) // 화살표 함수.
+			.then(successCallback) // 정상처리시 실행함수.
+			.catch(errorCallback) // 에러시 실행할 함수.
 	}
 }

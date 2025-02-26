@@ -26,7 +26,7 @@
 			<td><c:out value="${board.writer }"></c:out></td>
 			<th>작성일시</th>
 			<td><c:out value="${board.writeDate }"></c:out></td>
-		<tr><th>이미지 <c:out value="${board.img }"></c:out></th></tr>
+		<tr><th><img src="images/${board.img }"></img></th></tr>
 			<td colspan="4" align="center">
 				<button class="btn btn-warning" type="submit">수정</button>
 				<button class="btn btn-danger" type="button">삭제</button>
@@ -64,6 +64,15 @@
   <span class="col-sm-2">삭제</span>
   </li>
 </ul>
+</div>
+
+ <!-- 댓글페이징 -->
+ <div class="footer">
+<nav aria-label="Page navigation example">
+  <ul class="pagination pagination-sm justify-content-center">
+    
+  </ul>
+</nav>
 </div>
 
 </div>
