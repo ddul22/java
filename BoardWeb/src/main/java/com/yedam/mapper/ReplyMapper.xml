@@ -30,6 +30,15 @@
     
     </select>
 
+	<select id="selectReply" parameterType="reply" resultType="int">
+	select reply_no 
+				         ,reply 
+				         ,replyer
+				         ,reply_date
+				         ,board_no
+				   from tbl_reply 
+				   where reply_no = #{replyNo}
+	</select>
    
 	<insert id="insertReply" parameterType="reply">
 		<selectKey keyProperty="replyNo" resultType="int" order="BEFORE">
@@ -39,7 +48,11 @@
 		insert into tbl_reply (reply_no, reply, replyer, board_no)
 		values(#{replyNo}, #{reply}, #{replyer}, #{boardNo})
 	</insert>
-
+	
+	<delete id="deleteReply" parameterType="int">
+	delete from tbl_reply where reply_no = #{replyNo}				
+	</delete>
+	
 	
 	
 </mapper>
