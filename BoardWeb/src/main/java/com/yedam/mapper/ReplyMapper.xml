@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yedam.mapper.ReplyMapper">
+
+    <select id="chartData" resultType="Map">
+    select emp.department_id"
+				, dept.department_name
+				, count(1) cnt 
+				from employees emp 
+				join departments dept 
+				on   emp.department_id = dept.department_id 
+				group by emp.department_id, dept.department_name
+    </select>
+    
+    <select id="replyCount" parameterType="int" resultType="int">
+    select count(1) from tbl_reply where board_no = #{boardNo}
+    </select>
+    
+    <select id="replyList" parameterType="int" resultType="Map">
+    select  tbl_a.*
+				from (select /*+ INDEX_DESC (r pk_reply) */ 
+				             rownum rn, reply_no, reply, replyer, board_no, reply_date 
+				     from tbl_reply r 
+				     where board_no = ?) tbl_a 
+				where tbl_a.rn > (? - 1) * 5 
+				 <![CDATA[and tbl_b.rn <= #{page} * 5]]>
+    
+    </select>
+
+   
+	<insert id="insertReply" parameterType="reply">
+		<selectKey keyProperty="replyNo" resultType="int" order="BEFORE">
+			select reply_seq.nextval from dual
+		</selectKey>
+
+		insert into tbl_reply (reply_no, reply, replyer, board_no)
+		values(#{replyNo}, #{reply}, #{replyer}, #{boardNo})
+	</insert>
+
+	
+	
+</mapper>

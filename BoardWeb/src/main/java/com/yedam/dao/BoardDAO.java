@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yedam.common.SearchVO;
 import com.yedam.vo.BoardVO;
-import com.yedam.vo.SearchVO;
 
 /*
  * 추가,수정,삭제,조회
@@ -17,7 +17,6 @@ public class BoardDAO extends DAO {
 	// 페이징의 처리를 위한 실체데이터.
 	public int getTotalCount(SearchVO search) {
 		String sql = "select count(1) from tbl_board";
-
 		if (search.getSearchCondition().equals("T")) {
 			sql += "          where title like '%'||?||'%'";
 		} else if (search.getSearchCondition().equals("W")) {
