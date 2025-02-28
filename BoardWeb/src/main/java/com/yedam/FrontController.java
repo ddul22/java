@@ -22,6 +22,10 @@ import com.yedam.control.ChartControl;
 import com.yedam.control.ChartData;
 import com.yedam.control.Control;
 import com.yedam.control.DataControl;
+import com.yedam.control.DataTableControl;
+import com.yedam.control.FullCalanderControl;
+import com.yedam.control.FullDataControl;
+import com.yedam.control.InsertDataControl;
 import com.yedam.control.LoginControl;
 import com.yedam.control.LogoutControl;
 import com.yedam.control.MainControl;
@@ -80,6 +84,14 @@ public class FrontController extends HttpServlet {
 		// 차트.
 		map.put("/chart.do", new ChartControl());
 		map.put("/chartData.do", new ChartData());
+		
+		// datatable 관련.
+		map.put("/datatable.do", new DataTableControl());
+		
+		//캘린더 관련
+		map.put("/full.do", new FullCalanderControl());
+		map.put("/fullData.do", new FullDataControl()); //조회.
+		map.put("/insertData.do", new InsertDataControl());												//등록.
 	}
 
 	@Override

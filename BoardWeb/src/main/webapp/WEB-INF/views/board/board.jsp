@@ -54,7 +54,9 @@
 </div>
 	<input type="text" id="reply" class="col-sm-9">
 	<button id="addReply">댓글등록</button>
+	<button id="button">댓글삭제</button>
 <!-- 댓글목록 -->
+<!-- 
 <div class="content">
 <ul>
    <li>
@@ -65,8 +67,10 @@
   </li>
 </ul>
 </div>
+ -->
 
  <!-- 댓글페이징 -->
+ <!-- 
  <div class="footer">
 <nav aria-label="Page navigation example">
   <ul class="pagination pagination-sm justify-content-center">
@@ -74,8 +78,30 @@
   </ul>
 </nav>
 </div>
-
+ -->
+ <!-- 데이터테이블 활용 -->
+ <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>댓글번호</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>작성일시</th>
+                
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>댓글번호</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>작성일시</th>
+                </tr>
+        </tfoot>
+    </table>
+ 
 </div>
+
 <script>
 	let logid = "${loginId}"; // 자바의 변수값을 script 사용.
 	const bno = "${board.boardNo }";
@@ -93,4 +119,8 @@
 </script>
 
 <script src="js/replyService.js"></script>
-<script src="js/reply.js"></script>
+<!-- <script src="js/reply.js"></script>-->
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<script src="js/reply_dt.js"></script>

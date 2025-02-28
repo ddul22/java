@@ -4,8 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.yedam.mapper.BoardMapper;
+import com.yedam.mapper.ReplyMapper;
 
 public class DataSource {
 	
@@ -21,5 +25,12 @@ public class DataSource {
 		= new SqlSessionFactoryBuilder().build(inputStream);
 		
 		return sqlSessionFactory;
+	}
+	
+	public static ReplyMapper getReplyMapper() {
+		SqlSession sqlSession = DataSource.getInstance().openSession(true);
+		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+		
+		return sqlSession.getMapper(ReplyMapper.class);
 	}
 }
