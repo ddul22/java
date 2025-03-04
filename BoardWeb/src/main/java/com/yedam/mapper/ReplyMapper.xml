@@ -5,6 +5,13 @@
 
 <mapper namespace="com.yedam.mapper.ReplyMapper">
 
+	<delete id="deleteEvent" parameterType="String">
+	delete from tbl_calendar
+    where title=#{title}
+    AND start_date = #{start}
+    AND end_date = #{end}
+	</delete>
+
 	<insert id="insertEvent">
 	  insert into tbl_calendar(title, start_date, end_date)
 	  values(#{title}, #{start}, #{end})
